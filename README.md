@@ -18,7 +18,7 @@ approach promotes code reuse and maintainability across multiple GBA projects.
 
 - **Graphics**: Initialization and rendering of graphics.
 - **Input Handling**: Reading and processing input from the GBA buttons.
-- **Sound**: Initialization and management of sound.
+- **Audio**: Initialization and management of audio.
 - **System Initialization**: Setting up hardware registers and waiting for VBlank.
 
 ## Getting Started
@@ -33,7 +33,7 @@ approach promotes code reuse and maintainability across multiple GBA projects.
 1. **Clone the Repository**:
 
     ```sh
-    git clone https://github.com/yourusername/gba-framework.git
+    git clone https://github.com/Xalor90/gba-framework.git
     ```
 
 2. **Include the Framework in Your Project**:
@@ -42,7 +42,7 @@ approach promotes code reuse and maintainability across multiple GBA projects.
 
     ```sh
     cd /path/to/your-gba-project
-    git submodule add https://github.com/yourusername/gba-framework.git
+    git submodule add https://github.com/Xalor90/gba-framework.git
     ```
 
 ### Usage
@@ -51,23 +51,19 @@ Include the necessary headers from the framework and initialize the core compone
 
 **Example `main.cpp`**:
 
-    ```cpp
-    #include "gba-framework/include/system.hpp"
-    #include "gba-framework/include/graphics.hpp"
-    #include "gba-framework/include/input.hpp"
-    #include "gba-framework/include/sound.hpp"
+    #include "gba-framework/include/gba.hpp"
 
     int main()
     {
         System system;
         Graphics graphics;
         Input input;
-        Sound sound;
+        Audio audio;
 
         system.Init();
         graphics.Init();
         input.Init();
-        sound.Init();
+        audio.Init();
 
         for (;;)
         {
@@ -79,7 +75,6 @@ Include the necessary headers from the framework and initialize the core compone
 
         return 0;
     }
-    ```
 
 ### Documentation
 
@@ -88,7 +83,7 @@ The framework is organized into the following core classes:
 - **System**: Handles system initialization and VBlank waiting.
 - **Graphics**: Manages graphics initialization and rendering.
 - **Input**: Handles input initialization and reading.
-- **Sound**: Manages sound initialization.
+- **Audio**: Manages audio initialization.
 
 #### System
 
@@ -114,12 +109,12 @@ The framework is organized into the following core classes:
 - `void Init()`: Initializes the input system.
 - `void ReadKeys()`: Reads the current state of the GBA buttons.
 
-#### Sound
+#### Audio
 
-**Header**: `gba-framework/include/sound.hpp`
+**Header**: `gba-framework/include/audio.hpp`
 
 **Methods**:
-- `void Init()`: Initializes the sound system.
+- `void Init()`: Initializes the audio system.
 
 ### Contributing
 
